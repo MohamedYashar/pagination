@@ -674,23 +674,23 @@ document.body.appendChild(div2)
 
 
 
-// for(let i =0; i<data.length; i++){
+for(let i =0; i<data.length; i++){
 
   let newtr = document.createElement("tr");
   newtr.style.border ="solid 1px black"
 
   let newtd1= document.createElement("td");
   newtd1.style.border ="solid 1px black"
-  newtd1.innerText = `${data[0].id}`
+  newtd1.innerText = `${data[i].id}`
 
 
   let newtd2 = document.createElement("td");
   newtd2.style.border ="solid 1px black"
-  newtd2.innerText = `${data[0].name}`
+  newtd2.innerText = `${data[i].name}`
   
   let newtd3= document.createElement("td");
   newtd3.style.border ="solid 1px black"
-  newtd3.innerText = `${data[0].email}`
+  newtd3.innerText = `${data[i].email}`
 
 
 
@@ -698,11 +698,13 @@ document.body.appendChild(div2)
   newtr.appendChild(newtd2)
   newtr.appendChild(newtd3)
 
-// }
+  let tab = document.querySelector("#table");
 
-let tab = document.querySelector("#table");
+  tab.appendChild(newtr);
 
-tab.appendChild(newtr);
+}
+
+
 
 div1.appendChild(tab);
 
