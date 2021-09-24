@@ -589,28 +589,41 @@ document.body.appendChild(div1)
 
 
 for(let i =0; i<data.length; i++){
+    
+//     method 1 without using template literal line 595 to 615
 
-  let newtr = document.createElement("tr");
-  newtr.style.border ="solid 1px black"
+//   let newtr = document.createElement("tr");
+//   newtr.style.border ="solid 1px black"
 
-  let newtd1= document.createElement("td");
-  newtd1.style.border ="solid 1px black"
-  newtd1.innerText = `${data[i].id}`
+//   let newtd1= document.createElement("td");
+//   newtd1.style.border ="solid 1px black"
+//   newtd1.innerText = `${data[i].id}`
 
 
-  let newtd2 = document.createElement("td");
-  newtd2.style.border ="solid 1px black"
-  newtd2.innerText = `${data[i].name}`
+//   let newtd2 = document.createElement("td");
+//   newtd2.style.border ="solid 1px black"
+//   newtd2.innerText = `${data[i].name}`
   
-  let newtd3= document.createElement("td");
-  newtd3.style.border ="solid 1px black"
-  newtd3.innerText = `${data[i].email}`
+//   let newtd3= document.createElement("td");
+//   newtd3.style.border ="solid 1px black"
+//   newtd3.innerText = `${data[i].email}`
 
 
 
-  newtr.appendChild(newtd1)
-  newtr.appendChild(newtd2)
-  newtr.appendChild(newtd3)
+//   newtr.appendChild(newtd1)
+//   newtr.appendChild(newtd2)
+//   newtr.appendChild(newtd3)
+    
+    
+//     Method 2 of implementing template literals
+    
+    newtr.innerHTML = `  <td> ${data[i].id} </td> 
+                       <td> ${data[i].name} </td>
+                       <td> ${data[i].email} </td>`
+    
+//  How to apply  inside  template literals => document.queryseletorAll("td").style.border = "${solid 1px black}"
+    
+    
 
   let tab = document.querySelector("#table");
 
