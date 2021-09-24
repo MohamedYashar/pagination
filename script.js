@@ -1,5 +1,4 @@
 
-
 let data =[
     {
       "id": "1",
@@ -519,6 +518,9 @@ let data =[
   var table = document.createElement("table");
   table.setAttribute("id","table")
   table.style.width ="50%"
+  table.style.border="solid 3px black"
+  table.style.marginLeft ="auto"
+  table.style.marginRight= "auto"
 
 
   //  create table body
@@ -531,23 +533,25 @@ let data =[
 // creat table head
 
 var thead =document.createElement("thead");
-thead.style.height="1px"
+// thead.style.border="solid 1px black"
 
 var tr = document.createElement("tr");
 
 
 // 1)
-var th1 = document.createElement("th");
+var th1 = document.createElement("td");
 th1.innerText = "Id";
 
 
+
 // 2)
-var th2 = document.createElement("th");
+var th2 = document.createElement("td");
 th2.innerText = "Name";
 
 
+
 // 3)
-var th3 = document.createElement("th");
+var th3 = document.createElement("td");
 th3.innerText = "Email";
 
 
@@ -573,6 +577,51 @@ div1.appendChild(table)
 // apped div to dom
 
 document.body.appendChild(div1)
+
+
+
+
+
+//  i wan to display 100 data in one go
+
+// tr>> td>>
+
+
+
+for(let i =0; i<data.length; i++){
+
+  let newtr = document.createElement("tr");
+  newtr.style.border ="solid 1px black"
+
+  let newtd1= document.createElement("td");
+  newtd1.style.border ="solid 1px black"
+  newtd1.innerText = `${data[i].id}`
+
+
+  let newtd2 = document.createElement("td");
+  newtd2.style.border ="solid 1px black"
+  newtd2.innerText = `${data[i].name}`
+  
+  let newtd3= document.createElement("td");
+  newtd3.style.border ="solid 1px black"
+  newtd3.innerText = `${data[i].email}`
+
+
+
+  newtr.appendChild(newtd1)
+  newtr.appendChild(newtd2)
+  newtr.appendChild(newtd3)
+
+  let tab = document.querySelector("#table");
+
+  tab.appendChild(newtr);
+
+}
+
+div1.appendChild(tab);
+
+document.appendChild(div1)
+
 
 
 
@@ -663,69 +712,6 @@ div2.appendChild(lastbtn)
 // apped div2 element which has all button to body
 
 document.body.appendChild(div2)
-
-
-//  stoped till 585 code line
-
-
-//  i wan to display 100 data in one go
-
-// tr>> td>>
-
-
-
-for(let i =0; i<data.length; i++){
-
-  let newtr = document.createElement("tr");
-  newtr.style.border ="solid 1px black"
-
-  let newtd1= document.createElement("td");
-  newtd1.style.border ="solid 1px black"
-  newtd1.innerText = `${data[i].id}`
-
-
-  let newtd2 = document.createElement("td");
-  newtd2.style.border ="solid 1px black"
-  newtd2.innerText = `${data[i].name}`
-  
-  let newtd3= document.createElement("td");
-  newtd3.style.border ="solid 1px black"
-  newtd3.innerText = `${data[i].email}`
-
-
-
-  newtr.appendChild(newtd1)
-  newtr.appendChild(newtd2)
-  newtr.appendChild(newtd3)
-
-  let tab = document.querySelector("#table");
-
-  tab.appendChild(newtr);
-
-}
-
-
-
-div1.appendChild(tab);
-
-document.appendChild(div1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
