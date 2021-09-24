@@ -616,11 +616,13 @@ for(let i =0; i<data.length; i++){
     
     
 //     Method 2 of implementing template literals
+    let newtr = document.createElement("tr");
+        newtr.style.border= " solid 1px black";
     
-    newtr.innerHTML = `  <td> ${data[i].id} </td> 
-                       <td> ${data[i].name} </td>
-                       <td> ${data[i].email} </td>`
-    
+        newtr.innerHTML = `  <td> ${data[i].id} </td> 
+                             <td> ${data[i].name} </td>
+                             <td> ${data[i].email} </td>`
+        
 //  How to apply  inside  template literals => document.queryseletorAll("td").style.border = "${solid 1px black}"
     
     
